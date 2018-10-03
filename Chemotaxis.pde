@@ -2,10 +2,12 @@ Bacteria[] bugs;
  void setup()   
  {     
  	size(600, 600);
+ 	frameRate(60);
  	bugs = new Bacteria[100];
  	for(int i = 0; i < bugs.length; i++) {
  		bugs[i] = new Bacteria();
- 	}   
+ 	}
+
  }   
  void draw()   
  {    
@@ -25,6 +27,19 @@ Bacteria[] bugs;
  	}
 
  	void move() {
+ 		if(mouseX > myX) {
+ 			myX = myX + (int)(Math.random()*10 - 4.5);
+ 		}
+ 		if(mouseX < myX) {
+ 			myX = myX + (int)(Math.random()*10 - 5.5);
+ 		}
+  		if(mouseY > myY) {
+ 			myY = myY + (int)(Math.random()*10 - 4.5);
+ 		}
+ 		if(mouseY < myY) {
+ 			myY = myY + (int)(Math.random()*10 - 5.5);
+ 		}
+
  		myX = myX + (int)(Math.random()*10 - 5);
  		myY = myY + (int)(Math.random()*10 - 5);
  	}
